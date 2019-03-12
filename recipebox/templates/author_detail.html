@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h2>{{author.user.username}}</h2>
+<p>{{author.bio}}</p>
 
 <ul>
 	{% for recipe in recipes %}
@@ -10,5 +12,4 @@
 	</li>
 	{% endfor %}
 </ul>
-
 {% endblock %}

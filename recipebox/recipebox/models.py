@@ -14,19 +14,19 @@ class Author(models.Model):
         return f"/author/{self.id}"
 
 
-class Food(models.Model):
-    name = models.CharField(max_length=100)
+# class Food(models.Model):
+#     name = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
-class Unit(models.Model):
-    name = models.CharField(max_length=20)
-    abbr = models.CharField(max_length=6)
+# class Unit(models.Model):
+#     name = models.CharField(max_length=20)
+#     abbr = models.CharField(max_length=6)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
 class Recipe(models.Model):
