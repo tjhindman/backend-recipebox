@@ -1,8 +1,11 @@
-{% extend 'base.html' %}
-{% csrf_token %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-
+<form action="/author/new" method="POST">
+	{% csrf_token %}
+	{{ authorForm.as_p }}
+	<input type="submit" value="Submit">
+</form>
 
 {% endblock %}

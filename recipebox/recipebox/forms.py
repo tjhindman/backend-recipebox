@@ -1,11 +1,11 @@
 from django import forms
 # from django.core.exceptions import ValidationError
 # from django.utils.translation import ugettext_lazy as _
-from recipebox.models import Author, Recipe, User
+from recipebox.models import Author, User
 
 
-class AddRecipe(forms.Form):
-    author = forms.Select(
+class RecipeForm(forms.Form):
+    author = forms.ChoiceField(
         choices=[(a.id, a.user.username) for a in Author.objects.all()])
     title = forms.CharField(max_length=120)
     total_time = forms.DurationField()
@@ -16,6 +16,6 @@ class AddRecipe(forms.Form):
         pass
 
 
-class AddAuthor(forms.Form):
-    user = forms.Select(
-        choices=[(u.id, u.username) for u in User.objects.all()])
+class AuthorForm(forms.Form):
+    username = forms.CharField(max_length=40)
+    bio = forms.CharField(widget=forms.Textarea)

@@ -18,11 +18,13 @@ from django.urls import include, path
 from . import views, settings
 
 urlpatterns = [
-    path('', views.index_home),
+    path('', views.RecipeListView, name='home'),
     path('admin/', admin.site.urls),
-    path('author/', views.authors),
-    path('author/<int:author_id>', views.author),
-    path('recipe/<int:recipe_id>', views.recipe),
+    path('author/', views.AuthorListView, name='authors'),
+    path('author/<int:author_id>', views.AuthorView),
+    path('recipe/<int:recipe_id>', views.RecipeView),
+    path('recipe/new', views.RecipeCreateView),
+    path('author/new', views.AuthorCreateView),
 ]
 
 if settings.DEBUG:
