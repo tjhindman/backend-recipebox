@@ -1,16 +1,9 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block rcol %}
 <form action="/recipe/new" method="POST">
 	{% csrf_token %}
 	{{ recipeForm.as_p }}
 	<input type="submit" value="Submit">
 </form>
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
 {% endblock %}

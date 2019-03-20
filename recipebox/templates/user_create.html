@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block rcol %}
+<form action="/author/new" method="POST">
+	{% csrf_token %}
+	{{ userCreateForm.as_p }}
+	<input type="submit" value="Submit">
+</form>
+{% endblock %}
