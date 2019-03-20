@@ -43,7 +43,7 @@ def RecipeListView(req):
     })
 
 
-@login_required(login_url='/accounts/login', redirect_field_name='home')
+@login_required
 def RecipeCreateView(req):
 
     if req.method == "POST":
@@ -64,6 +64,7 @@ def RecipeCreateView(req):
     return render(req, 'recipe_create.html', {'recipeForm': form})
 
 
+@login_required
 @staff_member_required
 def AuthorCreateView(req):
 
