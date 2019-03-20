@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{%block rcol%}
+<ul>
+	{% for recipe in recipes %}
+	<li>
+		<h2><a href="/recipe/{{recipe.id}}"><b>{{ recipe.title }}</b></a>, by <a href="/author/{{recipe.author.id}}">{{ recipe.author.name }}</a></h2>
+		<p>{{ recipe.instructions }}</p>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}

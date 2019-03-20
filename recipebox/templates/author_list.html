@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block rcol %}
+{% for author in authors %}
+<li>
+	<h3>{{author.name}}</h3>
+	<p>{{author.bio}}</p>
+</li>
+{% endfor %}
+{% endblock %}
