@@ -1,5 +1,6 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import UpdateView
 from django.http import Http404
 from django.urls import reverse
 from django.shortcuts import redirect, render
@@ -81,6 +82,14 @@ def AuthorCreateView(req):
     else:
         form = AuthorForm
     return render(req, 'author_create.html', {'authorForm': form})
+
+
+@login_required(login_url='/accounts/login', redirect_field_name='home')
+def EditRecipeView(UpdateView):
+    model = Recipe
+    fields = ['title', 'description', 'total_time', 'instructions']
+    template_name_suffix = '_create'
+
 
 # def UserLoginView(req):
 #     if req.method == 'POST':

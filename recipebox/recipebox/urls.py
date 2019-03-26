@@ -26,6 +26,7 @@ urlpatterns = [
     path('recipe/new', views.RecipeCreateView),
     path('author/new', views.AuthorCreateView),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('editrecipe/', views.EditRecipeView)
     # re_path(r'^login/$', views.UserLoginView, name='login'),
     # re_path(r'^logout/$', views.logout, name='logout'),
 ]
